@@ -10,6 +10,5 @@ public class ChromeDemo {
         driver.get("https://anhitsolutions.com/"); //truy cập trang web
 
         System.out.println("Tiêu đề trang:" +driver.getTitle());
-
     }
 }
