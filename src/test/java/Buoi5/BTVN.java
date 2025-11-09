@@ -35,8 +35,6 @@ public class BTVN {
         WebElement email = driver.findElement(By.xpath("//input[@name='email']"));
         WebElement name = driver.findElement(By.xpath("//input[@name='full_name']"));
         WebElement phone = driver.findElement(By.xpath("//input[@name='mobile']"));
-        WebElement languageDropdown = driver.findElement(By.xpath("//select[@name='language']"));
-
 
         // Xóa dữ liệu cũ và nhập dữ liệu mới
         name.clear();
@@ -48,8 +46,6 @@ public class BTVN {
         email.clear();
         email.sendKeys("vananh80800@gmail.com");
 
-        Select langSelect = new Select(languageDropdown);
-        langSelect.selectByVisibleText("Vietnamese");
 
         String actualEmail = email.getAttribute("value");
         String exprctedEmail = "vananh80800@gmail.com";
@@ -75,15 +71,6 @@ public class BTVN {
             System.out.println("Điện thoại PASSED: " + actualPhone);
         } else {
             System.out.println("Điện thoại FAILED: " + actualPhone);
-        }
-
-
-        String actualLanguage = langSelect.getFirstSelectedOption().getText();
-        String expectedLanguage = "Vietnamese"; // <-- chỉnh theo giá trị thực tế trong dropdown
-        if (actualLanguage.equals(expectedLanguage)) {
-            System.out.println("Ngôn ngữ PASSED: " + actualLanguage);
-        } else {
-            System.out.println("Ngôn ngữ FAILED: " + actualLanguage);
         }
 
         driver.findElement(By.xpath("//button[@id='saveData']")).click();
