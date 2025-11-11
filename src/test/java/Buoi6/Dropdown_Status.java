@@ -1,11 +1,13 @@
 package Buoi6;
 
-import org.openqa.selenium.*;
+import org.openqa.selenium.By;
+import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.WebElement;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.testng.Assert;
 
-public class OrangeHRM_Dropdown {
-    public static void main(String[] args) throws InterruptedException {
+public class Dropdown_Status {
+    public static void main(String[] args) throws  InterruptedException{
         // Khởi tạo WebDriver
         WebDriver driver = new ChromeDriver();
         driver.manage().window().maximize();
@@ -28,13 +30,13 @@ public class OrangeHRM_Dropdown {
         driver.findElement(By.xpath("//span[text()='Admin']")).click();
         Thread.sleep(3000);
 
-        // Mở dropdown "User Role"
-        WebElement userRoleDropdown = driver.findElement(By.xpath("//label[text()='User Role']/parent::div/following-sibling::div/div"));
+        // Mở dropdown "Status"
+        WebElement userRoleDropdown = driver.findElement(By.xpath("//label[text()='Status']/parent::div/following-sibling::div/div"));
         userRoleDropdown.click();
         Thread.sleep(1000);
 
-        // Chọn item "Admin"
-        WebElement adminOption = driver.findElement(By.xpath("//div[@role='option']//span[text()='ESS']"));
+        // Chọn item "Enabled"
+        WebElement adminOption = driver.findElement(By.xpath("//div[@role='option']//span[text()='Enabled']"));
         adminOption.click();
         Thread.sleep(1000);
 
@@ -43,11 +45,8 @@ public class OrangeHRM_Dropdown {
         System.out.println("Giá trị hiển thị sau khi chọn: " + selectedText);
 
         //So sánh kết quả mong đợi
-        String expectedText = "Admin";
+        String expectedText = "Enabled";
         System.out.println("Giá trị mong đợi: " + expectedText);
         Assert.assertTrue(selectedText.contains(expectedText), "Giá trị trong dropdown không đúng");
-
-
-
     }
 }
