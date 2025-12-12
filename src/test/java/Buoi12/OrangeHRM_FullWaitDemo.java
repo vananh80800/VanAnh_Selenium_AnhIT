@@ -32,5 +32,7 @@ public class OrangeHRM_FullWaitDemo {
         password.sendKeys("admin123");
         WebElement loginButton = wait.until(ExpectedConditions.elementToBeClickable(By.xpath("//button[@type='submit']")));
         loginButton.click();
+
+        driver.quit();
     }
 }
