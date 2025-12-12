@@ -55,7 +55,6 @@ public class OrangeHRM_JSExecutor {
         //Lấy URL trang dashboard
         String url = (String)js.executeScript("return document.URL;");
         System.out.println("Dashboard URL (JS): " + url);
-
         driver.quit();
 
     }
