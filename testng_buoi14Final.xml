@@ -1,0 +1,12 @@
+<!DOCTYPE suite SYSTEM "https://testing.org/testng-1.0.dtd">
+
+<suite name="OrangeHRM Login Suite">
+    
+    <test name="Login Test">
+        <classes>
+            <class name="Buoi14.OrangeHRM_Login_TestNG"></class>
+            <class name="Buoi14.OrangeHRM_Login_TestNG_Group"></class>
+            <class name="Buoi14.OrangeHRM_Login_Priority_TestNG"></class>
+        </classes>
+    </test>
+</suite>
